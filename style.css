@@ -1,0 +1,27 @@
+/* reset default styles */ 
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(174, 228, 250);
+    text-align: center;
+}
+
+#main {
+    font-family: 'Blinker', sans-serif;
+}
+
+#size-container {
+    font-family: 'Lacquer', sans-serif;
+    font-size: 3rem;
+    border: 3px dashed black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 40vh auto 0 auto;
+    width: 40%;
+}
+#size {
+    font-size: 4rem;
+}
