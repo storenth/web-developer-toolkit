@@ -5,12 +5,12 @@
 }
 
 body {
-    background-color: rgb(174, 228, 250);
-    text-align: center;
+   background-color: rgb(174, 228, 250);
+   text-align: center;
 }
 
 #main {
-    font-family: 'Blinker', sans-serif;
+   font-family: 'Blinker', sans-serif;
 }
 
 #size-container {
