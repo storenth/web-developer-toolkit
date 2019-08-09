@@ -38,9 +38,6 @@ body {
 }
 
 /* buttons */
-#buttons-row {
-
-}
 
 #button-checker, #button-picker, #button-converter {
     display: inline-block;
