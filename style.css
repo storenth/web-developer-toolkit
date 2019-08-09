@@ -1,4 +1,7 @@
 /* reset default styles */ 
+* {
+    box-sizing: border-box;
+  }
 *{
     margin: 0;
     padding: 0;
@@ -13,15 +16,46 @@ body {
    font-family: 'Blinker', sans-serif;
 }
 
-#size-container {
+/* the toolbox */
+#toolbox {
+    margin-top: 30vh;
+}
+#size-checker, #color-picker, #em-converter {
     font-family: 'Lacquer', sans-serif;
     font-size: 3rem;
-    border: 3px dashed black;
-    border-radius: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
     padding: 20px;
-    margin: 40vh auto 0 auto;
-    width: 40%;
+    margin: 0 auto;
+    width: 600px;
+}
+#color-picker, #em-converter {
+    display: none;
 }
 #size {
     font-size: 4rem;
+}
+
+/* buttons */
+#buttons-row {
+
+}
+
+#button-checker, #button-picker, #button-converter {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 5px 5px 0 0;
+    width: 198px;
+    font-size: 1.2em;
+
+}
+#button-checker {
+border-bottom: none;
+}
+#button-picker {
+background-color: lightgrey;
+}
+#button-converter {
+background-color: lightgrey;
 }
