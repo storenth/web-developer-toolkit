@@ -60,6 +60,14 @@ ${h}`;
 };
 
 // color picker
+const rColor = Math.floor(Math.random() * 256);
+const gColor = Math.floor(Math.random() * 256);
+const bColor = Math.floor(Math.random() * 256);
+const opacityColor = parseFloat(Math.random().toFixed(1));
+
+const bodyBackgroundColor = "rgba(" + rColor + "," + gColor + "," + bColor + ", " + opacityColor + ")";
+
+document.body.style.background = bodyBackgroundColor;
 
 
 // em converter
