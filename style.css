@@ -21,7 +21,6 @@ body {
     margin-top: 30vh;
 }
 #size-checker, #color-picker, #em-converter {
-    font-family: 'Lacquer', sans-serif;
     font-size: 3rem;
     border: 2px solid black;
     border-top: none;
@@ -29,6 +28,7 @@ body {
     padding: 20px;
     margin: 0 auto;
     width: 600px;
+    min-height: 300px;
 }
 #color-picker, #em-converter {
     display: none;
@@ -42,13 +42,14 @@ body {
 #button-checker, #button-picker, #button-converter {
     display: inline-block;
     border: 2px solid black;
+    border-bottom: 2px dashed black;
     border-radius: 5px 5px 0 0;
     width: 198px;
-    font-size: 1.2em;
-
+    font-size: 1.3em;
+    padding: 5px 0;
 }
 #button-checker {
-border-bottom: none;
+    padding-top: 15px;
 }
 #button-picker {
 background-color: lightgrey;
@@ -56,15 +57,16 @@ background-color: lightgrey;
 #button-converter {
 background-color: lightgrey;
 }
-
-#color {
+#color-button {
     background-color: aquamarine;
-    font-family: 'Lacquer', sans-serif;
-    margin-top: 10px;
+    border: 2px solid rosybrown;
     color: rosybrown;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    border-radius: 10%;
-    font-size: 20px;
+    border-radius: 10px;
+    font-size: 25px;
+    width: 360px;
+    margin: 20px auto 0 auto;
+    cursor: pointer;
 }
