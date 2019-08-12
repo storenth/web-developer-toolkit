@@ -56,3 +56,15 @@ background-color: lightgrey;
 #button-converter {
 background-color: lightgrey;
 }
+
+#color {
+    background-color: aquamarine;
+    font-family: 'Lacquer', sans-serif;
+    margin-top: 10px;
+    color: rosybrown;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10%;
+    font-size: 20px;
+}
