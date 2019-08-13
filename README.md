@@ -12,8 +12,11 @@ Needs to be done :
 
 JavaScript:
 
-- the random colour picker : this will include a button, when you press on it, random colour will be generated, its code will be displayed, and the whole website background will change to this colour; the fonts will change to another random colour - this colour code will also be displayed; the greyed out buttons will stay in original condition.
-- the px to em converter : this will include 3 windows, the user will need to enter base font in px, and either em or px that they want to convert; the 3rd window will display the result of conversion, in px or em accordingly.
+- the logic for px to em converter : in the first window, the user will be entering base font in px; in the second or third the user will be entering a number to convert, either in px or em, and by clicking the button the conversion will appear in the last window.
+ Example : 
+           Base size : 16px, PX size: 32px, EM size: 2em;
+           Base size : 12px, PX size: 18px, EM size: 1.5em;
+           Base size : 20px, PX size: 20px, EM size: 1em;
 
 CSS:
 
