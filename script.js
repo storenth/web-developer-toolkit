@@ -15,7 +15,7 @@ let h = window.innerHeight;
 document.getElementById('size').innerHTML = `${w} X 
 ${h}`;
 
-document.querySelector('body').onresize = function(){
+document.querySelector('body').onresize = function () {
     w = window.innerWidth;
     h = window.innerHeight;
     document.getElementById('size').innerHTML = `${w} X 
@@ -24,48 +24,37 @@ ${h}`;
 
 // color picker
 
-let rColor = Math.floor(Math.random() * 256);
-let gColor = Math.floor(Math.random() * 256);
-let bColor = Math.floor(Math.random() * 256);
-let opacityColor = parseFloat(Math.random().toFixed(1));
+function colorRandomizer() {
 
-let bodyBackgroundColor = "rgba(" + rColor + "," + gColor + "," + bColor + ", " + opacityColor + ")";
+    let rColor = Math.floor(Math.random() * 256);
+    let gColor = Math.floor(Math.random() * 256);
+    let bColor = Math.floor(Math.random() * 256);
+    let opacityColor = parseFloat(Math.random().toFixed(1));
 
+    let randomColorWithOpacity = "rgba(" + rColor + "," + gColor + "," + bColor + ", " + opacityColor + ")";
+    let randomColor = "rgb(" + rColor + "," + gColor + "," + bColor + ")";
 
-document.body.style.background = bodyBackgroundColor;
-document.getElementById('button-checker').style.backgroundColor = bodyBackgroundColor;
-document.getElementById('size-checker').style.backgroundColor = bodyBackgroundColor;
-document.getElementById('color-picker').style.backgroundColor = bodyBackgroundColor;
-document.getElementById('em-converter').style.backgroundColor = bodyBackgroundColor;
-document.querySelector('#color-id').innerHTML = `${bodyBackgroundColor}`;
+    document.body.style.background = randomColorWithOpacity;
+    document.getElementById('color-button').style.backgroundColor = randomColor;
+    document.getElementById('button-convert').style.backgroundColor = randomColor;
+    document.querySelector('#color-id').innerHTML = `${randomColorWithOpacity}`;
+    document.querySelector('#button-color-id').innerHTML = `${randomColor}`;
 
-document.querySelector('#color-button').addEventListener('click', e => {
-    const rColor = Math.floor(Math.random() * 256);
-    const gColor = Math.floor(Math.random() * 256);
-    const bColor = Math.floor(Math.random() * 256);
-    const opacityColor = parseFloat(Math.random().toFixed(1));
+}
 
-    const bodyBackgroundColor = "rgba(" + rColor + ", " + gColor + ", " + bColor + ", " + opacityColor + ")";
-
-    document.body.style.backgroundColor = bodyBackgroundColor;
-    document.getElementById('size-checker').style.backgroundColor = bodyBackgroundColor;
-    document.getElementById('color-picker').style.backgroundColor = bodyBackgroundColor;
-    document.getElementById('em-converter').style.backgroundColor = bodyBackgroundColor;
-    buttonPicker.style.backgroundColor = bodyBackgroundColor;
-
-    document.querySelector('#color-id').innerHTML = `${bodyBackgroundColor}`;
-});
+colorRandomizer();
 
 
 // em converter
 
+// click handlers
 
-// buttons-tabs click handlers
+// buttons-tabs 
 
-buttonChecker.onclick = function(){
+buttonChecker.onclick = function () {
     buttonPicker.style.backgroundColor = 'lightgrey';
-    buttonChecker.style.backgroundColor = bodyBackgroundColor;
     buttonConverter.style.backgroundColor = 'lightgrey';
+    buttonChecker.style.backgroundColor = 'transparent';
     buttonChecker.style.paddingTop = '15px';
     buttonConverter.style.paddingTop = '5px';
     buttonPicker.style.paddingTop = '5px';
@@ -74,10 +63,10 @@ buttonChecker.onclick = function(){
     emConverter.style.display = 'none';
 }
 
-buttonPicker.onclick = function(){
-    buttonPicker.style.backgroundColor = bodyBackgroundColor;
+buttonPicker.onclick = function () {
     buttonChecker.style.backgroundColor = 'lightgrey';
     buttonConverter.style.backgroundColor = 'lightgrey';
+    buttonPicker.style.backgroundColor = 'transparent';
     buttonPicker.style.paddingTop = '15px';
     buttonConverter.style.paddingTop = '5px';
     buttonChecker.style.paddingTop = '5px';
@@ -86,10 +75,10 @@ buttonPicker.onclick = function(){
     emConverter.style.display = 'none';
 }
 
-buttonConverter.onclick = function(){
+buttonConverter.onclick = function () {
     buttonPicker.style.backgroundColor = 'lightgrey';
     buttonChecker.style.backgroundColor = 'lightgrey';
-    buttonConverter.style.backgroundColor = bodyBackgroundColor;
+    buttonConverter.style.backgroundColor = 'transparent';
     buttonConverter.style.paddingTop = '15px';
     buttonChecker.style.paddingTop = '5px';
     buttonPicker.style.paddingTop = '5px';
@@ -97,3 +86,7 @@ buttonConverter.onclick = function(){
     colorPicker.style.display = 'none';
     emConverter.style.display = 'block';
 }
+
+// color randomizer
+
+document.querySelector('#color-button').addEventListener('click', e => {colorRandomizer()});

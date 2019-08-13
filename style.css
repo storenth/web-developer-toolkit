@@ -1,10 +1,9 @@
 /* reset default styles */ 
-* {
-    box-sizing: border-box;
-  }
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -18,7 +17,7 @@ body {
 
 /* the toolbox */
 #toolbox {
-    margin-top: 30vh;
+    margin-top: 25vh;
 }
 #size-checker, #color-picker, #em-converter {
     font-size: 3rem;
@@ -30,11 +29,32 @@ body {
     width: 600px;
     min-height: 300px;
 }
-#color-picker, #em-converter {
+#em-converter h2 {
+    margin : 10px;
+}
+#em-converter {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+#size-checker, #color-picker {
     display: none;
+}
+#color-picker {
+    font-size: 2em;
 }
 #size {
     font-size: 4rem;
+}
+#size-checker p {
+    margin-top: 40px;
+}
+.input {
+    display: inline-block;
+}
+.input input {
+    font-size: 1.1em;
+    width: 140px;
 }
 
 /* buttons */
@@ -48,25 +68,30 @@ body {
     font-size: 1.3em;
     padding: 5px 0;
 }
-#button-checker {
+#button-converter {
     padding-top: 15px;
+}
+#button-checker {
+background-color: lightgrey;
 }
 #button-picker {
 background-color: lightgrey;
 }
-#button-converter {
-background-color: lightgrey;
-}
 #color-button {
-    background-color: aquamarine;
-    border: 2px solid rosybrown;
-    color: rosybrown;
+    border: 2px solid black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     border-radius: 10px;
     font-size: 25px;
-    width: 360px;
-    margin: 20px auto 0 auto;
+    width: 220px;
+    margin: 20px auto;
     cursor: pointer;
+}
+
+#button-convert {
+    width: 130px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 20px auto 0 auto;
 }
