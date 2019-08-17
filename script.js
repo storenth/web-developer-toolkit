@@ -46,6 +46,32 @@ colorRandomizer();
 
 
 // em converter
+const baseSize = document.querySelector('#base-size');
+const px = document.querySelector('#px');
+const em = document.querySelector('#em');
+const convertButton = document.querySelector('#button-convert');
+const result = document.querySelector('#result');
+
+const pxToEm = () => {
+    let emResult = parseInt(px.value) / parseInt(baseSize.value);
+    result.innerHTML = `${emResult.toFixed(4)} EM`;
+};
+
+const emToPx = () => {
+    let pxResult = parseFloat(em.value) * parseInt(baseSize.value);
+    result.innerHTML = `${Math.floor(pxResult)} PX`;
+};
+
+convertButton.addEventListener('click', () => {
+
+    if (px.value === "" && (em.value > 0 && baseSize.value > 0)) {
+        emToPx();
+    }
+
+    if (em.value === "" && (px.value > 0 && baseSize.value > 0)) {
+        pxToEm();
+    }
+});
 
 // click handlers
 
