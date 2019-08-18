@@ -64,13 +64,13 @@ const emToPx = () => {
 
 convertButton.addEventListener('click', () => {
 
-    if (px.value === "" && (em.value > 0 && baseSize.value > 0)) {
+    if (px.value === "" && (em.value !== "" && baseSize.value !== "")) {
         emToPx();
         em.value = "";
         baseSize.value = "";
     }
 
-    if (em.value === "" && (px.value > 0 && baseSize.value > 0)) {
+    if (em.value === "" && (px.value !== "" && baseSize.value !== "")) {
         pxToEm();
         px.value = "";
         baseSize.value = "";
