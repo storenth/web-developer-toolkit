@@ -66,10 +66,14 @@ convertButton.addEventListener('click', () => {
 
     if (px.value === "" && (em.value > 0 && baseSize.value > 0)) {
         emToPx();
+        em.value = "";
+        baseSize.value = "";
     }
 
     if (em.value === "" && (px.value > 0 && baseSize.value > 0)) {
         pxToEm();
+        px.value = "";
+        baseSize.value = "";
     }
 });
 
