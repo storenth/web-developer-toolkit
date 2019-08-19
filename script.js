@@ -1,4 +1,4 @@
-// toolbox
+// toolbox elements
 
 const buttonChecker = document.getElementById('button-checker');
 const buttonPicker = document.getElementById('button-picker');
@@ -6,8 +6,12 @@ const buttonConverter = document.getElementById('button-converter');
 const sizeChecker = document.getElementById('size-checker');
 const colorPicker = document.getElementById('color-picker');
 const emConverter = document.getElementById('em-converter');
+const baseSize = document.querySelector('#base-size');
+const px = document.querySelector('#px');
+const em = document.querySelector('#em');
+const convertButton = document.querySelector('#button-convert');
 
-// screen size checker
+// screen size checker logic
 
 let w = window.innerWidth;
 let h = window.innerHeight;
@@ -15,14 +19,7 @@ let h = window.innerHeight;
 document.getElementById('size').innerHTML = `${w} X 
 ${h}`;
 
-document.querySelector('body').onresize = function () {
-    w = window.innerWidth;
-    h = window.innerHeight;
-    document.getElementById('size').innerHTML = `${w} X 
-${h}`;
-};
-
-// color picker
+// color picker logic
 
 function colorRandomizer() {
 
@@ -45,39 +42,19 @@ function colorRandomizer() {
 colorRandomizer();
 
 
-// em converter
-const baseSize = document.querySelector('#base-size');
-const px = document.querySelector('#px');
-const em = document.querySelector('#em');
-const convertButton = document.querySelector('#button-convert');
-const result = document.querySelector('#result');
+// em converter logic
 
 const pxToEm = () => {
     let emResult = parseInt(px.value) / parseInt(baseSize.value);
-    result.innerHTML = `${emResult.toFixed(4)} EM`;
+    em.value = emResult.toFixed(2);
 };
 
 const emToPx = () => {
     let pxResult = parseFloat(em.value) * parseInt(baseSize.value);
-    result.innerHTML = `${Math.floor(pxResult)} PX`;
+    px.value = Math.floor(pxResult);
 };
 
-convertButton.addEventListener('click', () => {
-
-    if (px.value === "" && (em.value !== "" && baseSize.value !== "")) {
-        emToPx();
-        em.value = "";
-        baseSize.value = "";
-    }
-
-    if (em.value === "" && (px.value !== "" && baseSize.value !== "")) {
-        pxToEm();
-        px.value = "";
-        baseSize.value = "";
-    }
-});
-
-// click handlers
+// EVENT HANDLERS
 
 // buttons-tabs 
 
@@ -117,6 +94,28 @@ buttonConverter.onclick = function () {
     emConverter.style.display = 'block';
 }
 
+// size checker
+
+document.querySelector('body').onresize = function () {
+    w = window.innerWidth;
+    h = window.innerHeight;
+    document.getElementById('size').innerHTML = `${w} X 
+${h}`;
+};
+
 // color randomizer
 
 document.querySelector('#color-button').addEventListener('click', e => {colorRandomizer()});
+
+// em converter
+
+convertButton.addEventListener('click', () => {
+
+    if (px.value === "" && (em.value !== "" && baseSize.value !== "")) {
+        emToPx();
+    }
+
+    if (em.value === "" && (px.value !== "" && baseSize.value !== "")) {
+        pxToEm();
+    }
+});

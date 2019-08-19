@@ -38,7 +38,7 @@ body {
     line-height: 1.5em;
 }
 
-#size-checker, #color-picker {
+#size-checker, #em-converter {
     display: none;
 }
 #color-picker {
@@ -69,13 +69,13 @@ body {
     font-size: 1.3em;
     padding: 5px 0;
 }
-#button-converter {
+#button-picker {
     padding-top: 15px;
 }
 #button-checker {
 background-color: lightgrey;
 }
-#button-picker {
+#button-converter {
 background-color: lightgrey;
 }
 #color-button {
@@ -98,11 +98,4 @@ background-color: lightgrey;
     margin: 20px auto 0 auto;
     cursor: pointer;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-}
-
-#result {
-    background-color: burlywood;
-    margin-top: 15px;
-    margin-left: 201px;
-    width: 150px;
 }
