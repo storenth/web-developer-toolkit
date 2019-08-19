@@ -91,7 +91,8 @@ background-color: lightgrey;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
-#button-convert {
+#button-convert, #button-reset {
+    display: inline-block;
     width: 130px;
     border: 2px solid black;
     border-radius: 10px;

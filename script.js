@@ -10,6 +10,7 @@ const baseSize = document.querySelector('#base-size');
 const px = document.querySelector('#px');
 const em = document.querySelector('#em');
 const convertButton = document.querySelector('#button-convert');
+const resetButton = document.querySelector('#button-reset');
 
 // screen size checker logic
 
@@ -118,4 +119,11 @@ convertButton.addEventListener('click', () => {
     if (em.value === "" && (px.value !== "" && baseSize.value !== "")) {
         pxToEm();
     }
+});
+
+resetButton.addEventListener('click', () => {
+
+    px.value = "";
+    em.value = "";
+    baseSize.value = "";
 });
