@@ -1,0 +1,28 @@
+{
+  "name": "web-developer-toolkit",
+  "version": "1.0.0",
+  "description": "dependencies, test and coverage scripts",
+  "main": "script.js",
+  "scripts": {
+    "test": "mocha --timeout 5000 test/**/*_test.js",
+    "server": "http-server ./public",
+    "coverage": "nyc report --reporter=text"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storenth/web-developer-toolkit.git"
+  },
+  "author": "Kirill Zhdanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/storenth/web-developer-toolkit/issues"
+  },
+  "homepage": "https://github.com/storenth/web-developer-toolkit#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "puppeteer": "^1.19.0",
+    "puppeteer-to-istanbul": "^1.2.2"
+  }
+}
