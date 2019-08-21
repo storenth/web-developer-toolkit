@@ -28,8 +28,8 @@ Needs to be done:
 >Code-coverage:
 
 - Open Issue: https://github.com/istanbuljs/puppeteer-to-istanbul/issues/22
-- More then 80% based on best practice, but now 19.38%:
-![Alt text](./output/code_coverage.png "Code coverage")
+- More then 80% based on best practice, but now 62.79%:
+![Alt text](./output/code_coverage_2.png "Code coverage")
 
 
 ## Feature testing

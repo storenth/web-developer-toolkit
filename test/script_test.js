@@ -1,5 +1,5 @@
-const puppeteer = require('../node_modules/puppeteer/');
-const pti = require('../node_modules/puppeteer-to-istanbul/');
+const puppeteer = require('puppeteer');
+const pti = require('puppeteer-to-istanbul');
 const assert = require('assert');
 
 /**
@@ -16,10 +16,13 @@ describe('web-dev-toolkit', () => {
         browser = await puppeteer.launch()
         page = await browser.newPage()
         await page.setViewport({ width: 1280, height: 800 });
+        // Enable both JavaScript and CSS coverage
+        await Promise.all([
+            page.coverage.startJSCoverage(),
+            page.coverage.startCSSCoverage()
+          ]);
         // Endpoint need to start with `npm run server` 
         await page.goto('http://localhost:8080', { waitUntil: 'networkidle2' });
-        // Enable both JavaScript and CSS coverage
-        await page.coverage.startJSCoverage();
     });
     describe('Visual regress', () => {
         it('title contain `Web Developer Toolkit`', async () => {
@@ -77,16 +80,38 @@ describe('web-dev-toolkit', () => {
             // Verify
             assert.equal(actual, expected);
         }).timeout(50000);
+        // it('[EM to PX Converter] click reset', async () => {
+        //     // Setup
+        //     let expected = true;
+        //     let expectedTabCssLocator = '#button-converter';
+        //     let expectedResetCssLocator = '#button-reset';
+        //     let actual;
+        //     // Execute
+        //     await page.click(expectedTabCssLocator);
+
+        //     let actualPromise = await page.waitForSelector(expectedResetCssLocator);
+        //     if (actualPromise != null) {
+        //     await page.click(expectedResetCssLocator);
+        //         actual = true;
+        //     }
+        //     else
+        //         actual = false;
+        //     // Verify
+        //     assert.equal(actual, expected);
+        // }).timeout(50000);
 
     });
     after(async () => {
         // Disable both JavaScript and CSS coverage
         const jsCoverage = await page.coverage.stopJSCoverage();
+        await page.coverage.stopCSSCoverage();
+
         let totalBytes = 0;
         let usedBytes = 0;
-        const coverage = jsCoverage;
+        const coverage = [...jsCoverage];
         for (const entry of coverage) {
             totalBytes += entry.text.length;
+            console.log(`js fileName covered: ${entry.url}`);
             for (const range of entry.ranges)
                 usedBytes += range.end - range.start - 1;
         }

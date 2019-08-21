@@ -106,7 +106,7 @@ ${h}`;
 
 // color randomizer
 
-document.querySelector('#color-button').addEventListener('click', e => {colorRandomizer()});
+document.querySelector('#color-button').addEventListener('click', e => { colorRandomizer() });
 
 // em converter
 
@@ -122,7 +122,6 @@ convertButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
-
     px.value = "";
     em.value = "";
     baseSize.value = "";

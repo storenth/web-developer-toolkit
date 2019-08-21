@@ -4,9 +4,10 @@
   "description": "dependencies, test and coverage scripts",
   "main": "script.js",
   "scripts": {
+    "pretest": "rm -rf coverage && rm -rf .nyc_output",
     "test": "mocha --timeout 5000 test/**/*_test.js",
     "server": "http-server ./public",
-    "coverage": "nyc report --reporter=text"
+    "coverage": "nyc report --reporter=html"
   },
   "repository": {
     "type": "git",
